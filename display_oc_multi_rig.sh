@@ -1,17 +1,15 @@
 #!/bin/bash
 
+echo "Overclock Settings:"
+for NUM in {0..8}
+do
+nvidia-settings -q "[gpu:$NUM]/GPUGraphicsClockOffset[3]" -q "[gpu:$NUM]/GPUMemoryTransferRateOffset[3]"
+done
 
-nvidia-settings -q "[gpu:0]/GPUGraphicsClockOffset[3]" -q "[gpu:0]/GPUMemoryTransferRateOffset[3]"
-nvidia-settings -q [gpu:0]/GPUFanControlState -q [fan:0]/GPUTargetFanSpeed
+echo "Fan settings:"
+for NUM in {0..8}
+do
+nvidia-settings -q [gpu:$NUM]/GPUFanControlState -q [fan:$NUM]/GPUTargetFanSpeed
+done
 
-nvidia-settings -q "[gpu:1]/GPUGraphicsClockOffset[3]" -q "[gpu:1]/GPUMemoryTransferRateOffset[3]"
-nvidia-settings -q [gpu:1]/GPUFanControlState -q [fan:1]/GPUTargetFanSpeed
-
-nvidia-settings -q "[gpu:2]/GPUGraphicsClockOffset[3]" -q "[gpu:2]/GPUMemoryTransferRateOffset[3]"
-nvidia-settings -q [gpu:2]/GPUFanControlState -q [fan:2]/GPUTargetFanSpeed
-
-nvidia-settings -q "[gpu:3]/GPUGraphicsClockOffset[3]" -q "[gpu:3]/GPUMemoryTransferRateOffset[3]"
-nvidia-settings -q [gpu:3]/GPUFanControlState -q [fan:3]/GPUTargetFanSpeed
-
-nvidia-settings -q "[gpu:4]/GPUGraphicsClockOffset[3]" -q "[gpu:4]/GPUMemoryTransferRateOffset[3]"
-nvidia-settings -q [gpu:4]/GPUFanControlState -q [fan:4]/GPUTargetFanSpeed
+exit 0
