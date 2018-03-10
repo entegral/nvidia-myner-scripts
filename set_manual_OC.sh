@@ -1,9 +1,13 @@
 #!/bin/bash
 
+nvidia-settings -q "[gpu:0]/GPUGraphicsClockOffset[3]" 
+nvidia-settings -q "[gpu:0]/GPUMemoryTransferRateOffset[3]"
+
+
 echo Please enter desired values
-read -p 'GPU power limit: ' GPU_POWER_LIMIT
-read -p 'GPU OC offset: ' GPU_FACTORY_OC
-read -p 'Memory OC offset: ' GPUMEMOC
+read -p 'Desired GPU power limit: ' GPU_POWER_LIMIT
+read -p 'Desired GPU Overclock Offset: ' GPU_FACTORY_OC
+read -p 'Desired Memory OC offset: ' GPUMEMOC
 
 nvidia-smi -pm 1
 nvidia-smi -pl $GPU_POWER_LIMIT
