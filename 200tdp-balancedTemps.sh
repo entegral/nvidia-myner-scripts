@@ -6,7 +6,7 @@ nvidia-smi -pl 200
 # GPU offset for Asus STRIX-OC (factory overclocked by 79mhz)
 GPU_FACTORY_OC=100
 # Nvidia memory overclock offset
-GPUMEMOC=400
+GPUMEMOC=450
 # Nvidia fan settings / control
 GPU_FAN_SPEED=75
 GPU_FAN_SPEED_BLOWER=100
